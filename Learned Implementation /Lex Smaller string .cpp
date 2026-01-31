@@ -14,3 +14,6 @@ bool cmp(string a,string b){
     if(a.size()<=b.size()) return true;
     else return false;
 }
+
+//min also gives the lex smaller string 
+min("abe","b"); //return lex smaller string "abc"
