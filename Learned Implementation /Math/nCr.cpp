@@ -1,7 +1,7 @@
 // Calculates nCr % MOD for n<=10^6 and ofc r<=n 
 //Time Complexity : O(rlog(MOD))
 #define int long long int
-const int MOD
+const int MOD = 1e9+7;
 int nCr(int n,int r){             //O(r.log(MOD))
     if(r>n) return 0;    //nCr=0 ; r>n
     r=min(r,n-r);       // optimisation as nCr=nCn-r
