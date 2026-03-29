@@ -7,7 +7,7 @@ const int MAX=1e6;
 
 int fact[MAX+1],inv_fact[MAX+1];
 
-int binpow(int a,int b,int m){             //O(log b)=O(log(MAX))
+int binpow(int a,int b,int m){             //O(log b)=O(log(MOD))
     a%=m;
     if(b==0) return 1;
     if(b&1) return a*binpow(a,b-1,m)%m;    //=  (a*binpow(a,b-1,m))%m as associativity is left to right
