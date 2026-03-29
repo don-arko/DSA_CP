@@ -3,7 +3,7 @@
 #define int long long int
 const int MOD = 1e9+7;
 int nCr(int n,int r){             //O(r.log(MOD))
-    if(r>n) return 0;    //nCr=0 ; r>n
+    if(r>n || r<0 ) return 0;    //nCr=0 ; r>n
     r=min(r,n-r);       // optimisation as nCr=nCn-r
     int res=1;
     for(int i=0;i<r;i++){
