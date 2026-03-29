@@ -1,3 +1,4 @@
+//Time Complexity of all the Sieve Code: O(NloglogN)
 
 //BASIC Sieve Code
 const int N=1e7;
