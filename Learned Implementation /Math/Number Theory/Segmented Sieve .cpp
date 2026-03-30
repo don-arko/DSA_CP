@@ -1,4 +1,6 @@
 // Problem statement : Find primes in the range [l,....r] ;  0< l<=r <1e12 & r-l+1<=1e6 ; 
+
+//Time Complexity : O(nloglogn)
 vector<int> sieve(int n){
     vector<int> prime;
     vector<bool> is_prime(n+1,true);
@@ -13,6 +15,8 @@ vector<int> sieve(int n){
     }
     return prime;
 }
+
+//Time Complexity : O(sqb.LogLog sqb) + O((b-a+1). LogLog b) 
 vector<int> segmentedsieve(int l,int r){
     //Phase 1:
     vector<int> base_prime=sieve(ceil(sqrt(r)));
