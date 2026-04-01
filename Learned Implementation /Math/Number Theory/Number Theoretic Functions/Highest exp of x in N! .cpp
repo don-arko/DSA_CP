@@ -14,8 +14,8 @@ vector<pair<int,int>> pfact(int x){
 int legendre(int p,int n){  //O(log n)  base is p
     int ans=0;
     for(int i=p;i<=n;i*=p){
-        ans+=p/i;
-    }
+        ans+=n/i;
+    }return ans;
 }
 int power(int x,int n){            //O(sqrt(x)+logx.logn)
     vector<pair<int,int>> prime=pfact(x);    //O(sqrtx)
