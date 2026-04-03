@@ -1,5 +1,5 @@
 //Time complexity : O(r)
-
+// n,r<=30 
 int nCr(int n,int r){
     if(r<0 || r>n) return 0;
     r=min(r,n-r);
