@@ -1,3 +1,6 @@
+//Time Complexity : O(MAX+T)
+//Caculates nCr in O(1) per test case for all the testcases
+//Constraint : T<=1e6 , n,r<=1e6 ; r<=n
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long int
