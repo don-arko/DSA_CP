@@ -1,4 +1,6 @@
-//Precomputes all the (factorials and their inverse)%MOD int the range [0,MAX] in O(MAX)
+//Time Complexity : O(MAX)
+//Precomputes all the (factorials and their inverse)%MOD 
+//Constraint : r,n  <=1e6 ; r<=n
 const int MAX=1e6;
 void factorials(){              //O(MAX)
     fact[0] = 1;
