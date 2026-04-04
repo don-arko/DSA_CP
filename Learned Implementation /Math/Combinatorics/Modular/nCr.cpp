@@ -1,5 +1,7 @@
-// Calculates nCr % MOD for n<=10^6 and ofc r<=n 
 //Time Complexity : O(rlog(MOD))
+// Calculates nCr % MOD 
+//constraint : n<=10^6 and ofc r<=10^6 (r<=n)
+
 #define int long long int
 const int MOD = 1e9+7;
 int nCr(int n,int r){             //O(r.log(MOD))
