@@ -15,5 +15,9 @@ bool cmp(string a,string b){
     else return false;
 }
 
-//min also gives the lex smaller string 
+bool compare(string a,int b){
+    return a<b ;                 // less than (<) operator is overloaded with lex comparison in strings
+}
+
+//min also gives the lex smaller string as is internally used less than operator
 min("abe","b"); //return lex smaller string "abc"
