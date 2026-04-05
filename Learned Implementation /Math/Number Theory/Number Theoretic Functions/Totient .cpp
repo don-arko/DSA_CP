@@ -1,4 +1,6 @@
-vector<pair<int,int>> pfact(int x){            //O(rootX)
+//Time Complexity    :    O(√x+logx)=O(√x)
+//Constraint         :    x <= 1e12
+vector<pair<int,int>> pfact(int x){            //O(√x)
     vector<pair<int,int>> ans;
     for(int i=2;i*i<=x;i++){
         if(x%i==0){
@@ -12,7 +14,7 @@ vector<pair<int,int>> pfact(int x){            //O(rootX)
     return ans;
 }
 
-int totient(int x){                            //O(rootX+logX)=O(sqrtX)
+int totient(int x){                            //O(√x+logx)=O(√x)
     vector<pair<int,int>> prime=pfact(x);
      //no need to handle x=1 as empty vector is returned in such case and nothing is subtracted from x
     for(auto p:prime){
