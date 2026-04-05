@@ -1,3 +1,6 @@
+//Time Complexity : O(log min(a,b)));
+//Constrain       : a,b <= 1e18
+
 //Recursive Implementation of GCD  , Time Complexiy: O(log(min(a,b)))
 
 int gcd(int a,int b){   //first arg is always larger imp
