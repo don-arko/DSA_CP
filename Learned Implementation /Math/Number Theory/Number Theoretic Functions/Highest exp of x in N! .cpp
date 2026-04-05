@@ -1,4 +1,7 @@
-vector<pair<int,int>> pfact(int x){
+//Time Complexity  :  O(√x + logn .logx) = O(√x)
+//Constraint       :  x <= 1e12  ,  n <= 1e18 
+
+vector<pair<int,int>> pfact(int x){    //O(√x)
     vector<pair<int,int>> ans;
     for(int i=2;i*i<=x;++i){
         if(x%i==0){
