@@ -1,3 +1,5 @@
+//Time Complexity : O(NloglogN)
+//Constraint      : n,T <= 1e6 
 const int N=1e6;
 bool is_prime[N+1];
 void sieve(){                        //O(NloglogN)
