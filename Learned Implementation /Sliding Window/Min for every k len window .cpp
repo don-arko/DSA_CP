@@ -17,7 +17,7 @@ void solve(){
 struct monotone_deque{
     deque<int> dq;
     void insert(int x){
-        while(!dq.empty() && dq.back()>x) dq.pop_back();
+        while(!dq.empty() && dq.back()>x) dq.pop_back();  //use >  to get maximum in every k len window
         dq.push_back(x);
     }
     void remove(int x){ 
