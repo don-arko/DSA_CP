@@ -10,8 +10,8 @@ void solve(){
     while(q--){
         int x;cin>>x;
         //ans = #segs not covering point x
-        int ans=lower_bound(r,r+n,x)-r;   //#R's < x 
-        ans+=(l+n)-upper_bound(l,l+n,x);  //#L's > x
+        int ans=lower_bound(r,r+n,x)-r;   //#R's < x   : #segs lying before point x
+        ans+=(l+n)-upper_bound(l,l+n,x);  //#L's > x   : #segs lying after point x
         cout<<n-ans<<'\n';
     }
 }
