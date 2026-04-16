@@ -6,7 +6,7 @@ struct mean{
     void insert(int x){    //O(1)
         sum+=x;cnt++;
     }
-    void remove(int x){     //O(1)
+    void remove(int x){     //O(1)    ..assumption : x is always present when remove(x) is called
         sum-=x;cnt--;
     }
     double get_mean(){        //O(1)
