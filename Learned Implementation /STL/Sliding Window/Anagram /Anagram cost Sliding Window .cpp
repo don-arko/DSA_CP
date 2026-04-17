@@ -3,6 +3,8 @@ Problem : Given two string S,T;|S|>|T| . Find the cost to make every |T| len win
           |S|=n
           |T|=m
 */
+
+
 /*
 Approach 1:  Basic Bruteforce : 
 Time Complexity : O(nmlog26)
@@ -40,6 +42,51 @@ void solve(){
     for(int i=0;i<n-m+1;i++){                   //TC=O(n*mlog26)
         cout<<cost(i)<<' ';
     }
+    
+    
+}
+signed main(){
+    solve();
+}
+
+
+/*
+Approach 2 : Optimisation not , building the freq map for each window 
+Time Complexity : O(26*N*log26)
+*/
+#include<bits/stdc++.h>
+using namespace std;
+
+int cost(map<int,int> m1,map<int,int> m2){   //O(26log26)
+    int sum=0;
+    for(auto v:m1){
+        sum+=max(0,v.second-m2[v.first]);          //O(log26)
+    }
+    return sum;
+}
+void solve(){
+    string s,t;
+    cin>>s>>t;
+    map<int,int> freq_s,freq_t;
+    int n=s.length();
+    int m=t.length();
+
+    for(auto ch:t)freq_t[ch-'a']++; //const freq array 
+    //Standard SW Template 
+    for(int i=0;i<n;i++){                   //O(26*n*log26)
+        //insert
+        freq_s[s[i]-'a']++;                  //O(log26)
+        
+        //erase
+        if(i-m>=0){
+            freq_s[s[i-m]-'a']--;             //O(log26)
+        }
+        //get query
+        if(i>=m-1){
+            cout<<cost(freq_s,freq_t)<<' ';    //O(26log26)
+        }
+    }
+        
     
     
 }
