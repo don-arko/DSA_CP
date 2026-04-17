@@ -5,6 +5,7 @@ Problem : Given two string S,T;|S|>|T| . Find the cost to make every |T| len win
 */
 
 
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*
 Approach 1:  Basic Bruteforce : 
 Time Complexity : O(nmlog26)
@@ -48,6 +49,7 @@ void solve(){
 signed main(){
     solve();
 }
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 /*
@@ -93,8 +95,51 @@ void solve(){
 signed main(){
     solve();
 }
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 /*
-Approach 4: 
+Approach 3 : Optimisation use array and remove the log factor to const
+Time Complexity : O(26*N)
+*/
+
+#include<bits/stdc++.h>
+using namespace std;
+int cost(int a[],int b[]){
+    int sum=0;
+    for(int i=0;i<26;i++){
+        sum+=max(0,a[i]-b[i]);
+    }
+    return sum;
+}
+void solve(){
+    string s,t;cin>>s>>t;
+    int n=s.size();
+    int m=t.size();
+    int freq_s[26]={0};
+    int freq_t[26]={0};
+    for(char ch:t)freq_t[ch-'a']++;
+    //std template for SW
+    for(int i=0;i<n;i++){            //O(26 * N)
+        //insert()
+        freq_s[s[i]-'a']++;                 // O(1)
+        
+        //erase()
+        if(i-m>=0) freq_s[s[i-m]-'a']--;      //O(1)
+
+        //cost
+        if(i>=m-1)
+            cout<<cost(freq_s,freq_t)<<' ';                    //O(26)
+    }
+}
+signed main(){
+    solve();
+}
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+/*
+Approach 4: Optimisation , remove the 26 factor which is the size of the DS
 Time Complexity : O(N)
 */
 #include<bits/stdc++.h>
@@ -153,3 +198,4 @@ void solve(){
 signed main(){
     solve();
 }
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------
