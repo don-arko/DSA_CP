@@ -8,12 +8,12 @@ struct Ds{
     //methods
     void insert(int x){    //O(1)
         cost-=max(0,a[x]-b[x]); //remove the prev contribution of ch from prev ans
-        a[ch-'a']++;                               //update the freq of ch
+        a[x]++;                               //update the freq of ch
         cost+=max(0,a[x]-b[x]); //add the new contribution to ans
     }
     void erase(char ch){     //O(1)
         cost-=max(0,a[x]-b[x]); //remove the prev contribution of ch from prev ans
-        a[ch-'a']--;                               //update the freq of ch
+        a[x]--;                               //update the freq of ch
         cost+=max(0,a[x]-b[x]); //add the new contribution to ans
     }
     int getcost(){          //O(1)
