@@ -53,7 +53,7 @@ signed main(){
 
 
 /*
-Approach 2 : Optimisation not , building the freq map for each window 
+Approach 2 : Optimisation : not building the freq map for each window 
 Time Complexity : O(26*N*log26)
 */
 #include<bits/stdc++.h>
