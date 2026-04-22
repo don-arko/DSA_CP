@@ -1,52 +1,41 @@
 //Approach 1 : Using freq map
 //Time Complexity :  O(nlog26)
 
-#include<bits/stdc++.h>
-using namespace std;
-
-void solve(){
-    string s,t;cin>>s>>t;
-    if(s.length()!=t.length()) { cout<<"Not possible";return; }
-  
-    map<char,int> a,b;
-    for(char ch:s)a[ch-'a']++;    //O(nlog26)
-    for(char ch:t)b[ch-'a']++;    //O(mlog26)
-
+int cost(string s,string t){
+    if(s.length()!=t.length()) return -1;
+    map<char,int> ms,mt;
+    //build the map
+    for(char ch:s)ms[ch]++;    //O(nlog26)
+    for(char ch:t)mt[ch]++;    //O(mlog26)
+    
+    //compute cost
     //cost = sum of positive diff
+    
     int sum=0;
-    for(auto p:a){                      //O(26log26)
-        sum+=max(0,p.second-b[p.first]);  //O(log26)
+    for(auto p:ms){                            //O(26log26)
+        sum+=max(0,p.second-mt[p.first]);   v  //O(log26)
     }
-    cout<<sum<<'\n';
+    return sum;
 
-}
-signed main(){
-    solve();
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //Approach 2 : Using freq Array
 //Time Complexity : O(n+26) 
 
-#include<bits/stdc++.h>
-using namespace std;
-int a[26],b[26]; //freq array
+int a[26],b[26];                                //Global freq array
+int cost(string s,string t){
+    if(s.length()!=t.length()) return -1;
 
-void solve(){
-    string s,t;cin>>s>>t;
-    if(s.length()!=t.length()) { cout<<"Not possible";return; }
-    
-    for(char ch:s)a[ch-'a']++;  //O(n)
-    for(char ch:t)b[ch-'a']++;  //O(m)
+    //build the freq arr
+    for(char ch:s)a[ch-'a']++;                  //O(n)
+    for(char ch:t)b[ch-'a']++;                  //O(m)
  
     //cost = sum of positive diff  {as len can't change as operation = transform only }
     int sum=0;
-    for(int i=0;i<26;i++){   //O(26)
+    for(int i=0;i<26;i++){                       //O(26)
         sum+=max(0,a[i]-b[i]);
     }
-    cout<<sum<<'\n';
+    return cost;
+}
 
-}
-signed main(){
-    solve();
-}
