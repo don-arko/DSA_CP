@@ -119,9 +119,12 @@ void solve(){
     string s,t;cin>>s>>t;
     int n=s.size();
     int m=t.size();
-    int freq_s[26]={0};
+    
     int freq_t[26]={0};
     for(char ch:t)freq_t[ch-'a']++;
+
+    //Datastructure maintained per window
+    int freq_s[26]={0};
     //std template for SW
     for(int i=0;i<n;i++){            //O(26 * N)
         //insert()
