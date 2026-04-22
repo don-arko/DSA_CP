@@ -6,15 +6,15 @@ struct Ds{
     //behaves as freq array for every m len window of string S
 
     //methods
-    void insert(char ch){    //O(1)
-        cost-=max(0,a[ch-'a']-b[ch-'a']); //remove the prev contribution of ch from prev ans
+    void insert(int x){    //O(1)
+        cost-=max(0,a[x]-b[x]); //remove the prev contribution of ch from prev ans
         a[ch-'a']++;                               //update the freq of ch
-        cost+=max(0,a[ch-'a']-b[ch-'a']); //add the new contribution to ans
+        cost+=max(0,a[x]-b[x]); //add the new contribution to ans
     }
     void erase(char ch){     //O(1)
-        cost-=max(0,a[ch-'a']-b[ch-'a']); //remove the prev contribution of ch from prev ans
+        cost-=max(0,a[x]-b[x]); //remove the prev contribution of ch from prev ans
         a[ch-'a']--;                               //update the freq of ch
-        cost+=max(0,a[ch-'a']-b[ch-'a']); //add the new contribution to ans
+        cost+=max(0,a[x]-b[x]); //add the new contribution to ans
     }
     int getcost(){          //O(1)
         return cost;
