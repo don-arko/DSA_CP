@@ -69,11 +69,14 @@ int cost(map<int,int> m1,map<int,int> m2){   //O(26log26)
 void solve(){
     string s,t;
     cin>>s>>t;
-    map<int,int> freq_s,freq_t;
     int n=s.length();
     int m=t.length();
-
+          
+    map<int,int> freq_t;
     for(auto ch:t)freq_t[ch-'a']++; //const freq array 
+
+    //Datastructure maintained for window
+    map<int,int> freq_s;
     //Standard SW Template 
     for(int i=0;i<n;i++){                   //O(26*n*log26)
         //insert
